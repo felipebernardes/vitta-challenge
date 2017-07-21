@@ -1,0 +1,91 @@
+{
+	"variables": [],
+	"info": {
+		"name": "vitta-challenge",
+		"_postman_id": "8a77c0a5-e5b8-6c7a-7da2-adad931677c1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8081/territories",
+			"request": {
+				"url": "localhost:8081/territories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"A\",\n  \"start\": { \"x\": 0, \"y\": 0 },\n  \"end\": { \"x\": 60, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/territories",
+			"request": {
+				"url": "localhost:8081/territories",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"A\",\n\t\"start\": { \"x\": 0, \"y\": 0 },\n\t\"end\": { \"x\": 50, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/territories/:id",
+			"request": {
+				"url": "localhost:8081/territories/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"A\",\n\t\"start\": { \"x\": 0, \"y\": 0 },\n\t\"end\": { \"x\": 50, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/territories/:id",
+			"request": {
+				"url": "localhost:8081/territories/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"A\",\n\t\"start\": { \"x\": 0, \"y\": 0 },\n\t\"end\": { \"x\": 50, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
