@@ -1,0 +1,31 @@
+{
+  "name": "VittaChallenge",
+  "version": "1.0.0",
+  "description": "Eu realmente quero trabalhar na Vitta!",
+  "author": {
+    "name": "Felipe Bernardes",
+    "email": "bernardes.flp@gmail.com"
+  },
+  "directories": {
+    "lib": "./app/controllers",
+    "test": "./test"
+  },
+  "dependencies": {
+    "config": "*",
+    "koa": ">=2.2.x",
+    "koa-body": ">=2.0.0",
+    "koa-router": ">=7.x.x"
+  },
+  "devDependencies": {
+    "get-port": "^3.0.0",
+    "jasmine-node": "*",
+    "optimist": "*"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node ./node_modules/jasmine-node/lib/jasmine-node/cli.js tests"
+  },
+  "engines": {
+    "node": ">=8.1.3"
+  }
+}
