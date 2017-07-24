@@ -8,9 +8,9 @@
 	},
 	"item": [
 		{
-			"name": "localhost:8081/territories",
+			"name": "/territories",
 			"request": {
-				"url": "localhost:8081/territories",
+				"url": "localhost:80/territories",
 				"method": "POST",
 				"header": [
 					{
@@ -28,9 +28,9 @@
 			"response": []
 		},
 		{
-			"name": "localhost:8081/territories",
+			"name": "/territories",
 			"request": {
-				"url": "localhost:8081/territories",
+				"url": "localhost:80/territories",
 				"method": "GET",
 				"header": [
 					{
@@ -48,9 +48,9 @@
 			"response": []
 		},
 		{
-			"name": "localhost:8081/territories/:id",
+			"name": "/territories/:id",
 			"request": {
-				"url": "localhost:8081/territories/2",
+				"url": "localhost:80/territories/2",
 				"method": "GET",
 				"header": [
 					{
@@ -68,9 +68,9 @@
 			"response": []
 		},
 		{
-			"name": "localhost:8081/territories/:id",
+			"name": "/territories/:id",
 			"request": {
-				"url": "localhost:8081/territories/2",
+				"url": "localhost:80/territories/2",
 				"method": "DELETE",
 				"header": [
 					{

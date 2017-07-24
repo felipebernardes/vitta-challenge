@@ -11,6 +11,6 @@ RUN set -x \
 
 WORKDIR /src
 
-EXPOSE 8081
+EXPOSE 8888
 
 CMD npm start

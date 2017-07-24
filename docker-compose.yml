@@ -1,7 +1,15 @@
-server:
-  build: .
-  dockerfile: Dockerfile
-  volumes:
-    - .:/src:rw
-  ports:
-    - "8081:8081"
+version: '2'
+services:
+  proxy:
+    build: ./proxy
+    links:
+      - vitta-challenge-api
+    ports:
+      - "80:80"
+    restart: always
+
+  vitta-challenge-api:
+    build: ./app
+    restart: always
+    volumes:
+      - .:/src:rw
