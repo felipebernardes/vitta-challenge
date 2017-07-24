@@ -1,0 +1,7 @@
+server:
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+    - .:/src:rw
+  ports:
+    - "8081:8081"
