@@ -8,24 +8,6 @@ To know what's going to happen next on my challenge, [check out the backlog](htt
 
 ### running
 
-**install node > 8**
 ```
-$ nvm use 8
-```
-- note: if you don't have node version manager, [get it here](https://github.com/creationix/nvm).  
-
-
-**install dependencies**
-```sh
-$ npm install
-```
-
-**run tests**
-```sh
-$ npm test
-```
-
-**run the app**
-```sh
-$ npm start
+$ docker-compose up
 ```
