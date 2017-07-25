@@ -1,11 +1,11 @@
 async function up(knex) {
   await knex.schema.createTableIfNotExists("territory", (table) => {
     table.increments('id').primary();
-    table.string("name");
-    table.string("area");
-    table.string("painted_area");
-    table.jsonb("start", 64);
-    table.jsonb("end", 64);
+    table.string("name").notNull();
+    table.string("area").notNull();
+    table.string("painted_area").defaultTo("0");
+    table.jsonb("start", 64).notNull();
+    table.jsonb("end", 64).notNull();
     table.timestamps();
   });
 };
