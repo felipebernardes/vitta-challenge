@@ -11,6 +11,8 @@ services:
   vitta-challenge-api:
     build: ./app
     command: ["./wait-for-postgres.sh", "postgres:5432", "npm start"]
+    environment:
+      - NODE_APP_INSTANCE=8888
     links:
       - postgres
     restart: always
