@@ -1,43 +1,39 @@
 "use strict";
-
-const db = {};
+const { knex } = require('./db/db');
 
 module.exports = {
   get: (table, id) => {
-    return new Promise((resolve, reject) => {
-      resolve(db[table][parseInt(id)]);
-    });
+    return knex(table).where('id', id);
   },
 
   list: (table) => {
-    return new Promise((resolve, reject) => {
-      resolve(db[table] || []);
-    });
+    return knex(table);
   },
 
   remove: (table, id) => {
-    return new Promise((resolve, reject) => {
-      delete db[table][parseInt(id)];
-      resolve();
-    });
+    return knex(table).where('id', id).del();
   },
 
   set: (table, data) => {
-    if (!db[table]) {
-      db[table] = [];
-    }
+    const now = new Date();
 
-    let length = db[table].length;
+    data.created_at = now;
+    data.updated_at = now;
 
-    data.id = length;
-    db[table].push(data);
-
-    return module.exports.get(table, length);
+    return knex.insert(data)
+          .into(table)
+          .returning('id')
+          .then(insertedIds => module.exports.get(table, insertedIds[0]));
   },
 
   update: (table, id, data) => {
-    data.id = id;
-    db.table[parseInt(id)] = data;
-    return module.exports.get(table, id);
+    data.updated_at = new Date();
+
+    return knex(table)
+          .where('id', '=', id)
+          .update(data)
+          .returning('id')
+          .then(updatedIds => module.exports.get(table, updatedIds[0]));
+
   },
 };
