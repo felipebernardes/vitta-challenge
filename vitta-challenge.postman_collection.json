@@ -50,7 +50,7 @@
 		{
 			"name": "/territories/:id",
 			"request": {
-				"url": "localhost:80/territories/2",
+				"url": "localhost:80/territories/1",
 				"method": "GET",
 				"header": [
 					{
@@ -82,6 +82,26 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"name\": \"A\",\n\t\"start\": { \"x\": 0, \"y\": 0 },\n\t\"end\": { \"x\": 50, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/territories",
+			"request": {
+				"url": "localhost:80/territories/200",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Baaa\",\n  \"start\": { \"x\": 0, \"y\": 0 },\n  \"end\": { \"x\": 20, \"y\": 50 }\n}"
 				},
 				"description": ""
 			},
