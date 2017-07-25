@@ -8,9 +8,8 @@ async function create(ctx, next) {
 
   let data = ctx.request.body;
   data.area = (data.end.x - data.start.x) * (data.end.y - data.start.y);
-  data.painted_area = 0;
 
-  ctx.body.data = await dbManager.set('territories', data);
+  ctx.body.data = await dbManager.set('territory', data);
   ctx.status = 201;
 
   await next();
@@ -22,7 +21,7 @@ async function get(ctx, next) {
     error: false
   };
 
-  ctx.body.data = await dbManager.get('territories', ctx.params.id);
+  ctx.body.data = await dbManager.get('territory', ctx.params.id);
 }
 
 async function list(ctx, next) {
@@ -32,7 +31,7 @@ async function list(ctx, next) {
     error: false
   };
 
-  ctx.body.data = await dbManager.list('territories');
+  ctx.body.data = await dbManager.list('territory');
   ctx.body.count = ctx.body.data.length;
   ctx.status = 200;
 
@@ -42,10 +41,25 @@ async function list(ctx, next) {
 async function remove(ctx, next) {
   ctx.body = { error: false };
 
-  await dbManager.remove('territories', ctx.params.id);
+  await dbManager.remove('territory', ctx.params.id);
   ctx.status = 200;
 
   await next();
 }
 
-module.exports = { create, get, list, remove };
+async function update(ctx, next) {
+  ctx.body = {
+    data: null,
+    error: false
+  };
+
+  let data = ctx.request.body;
+  data.area = (data.end.x - data.start.x) * (data.end.y - data.start.y);
+
+  ctx.body.data = await dbManager.update('territory', ctx.params.id, data);
+  ctx.status = 200;
+
+  await next();
+}
+
+module.exports = { create, get, list, remove, update };
