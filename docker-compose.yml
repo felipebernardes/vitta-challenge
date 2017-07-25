@@ -10,6 +10,20 @@ services:
 
   vitta-challenge-api:
     build: ./app
+    command: ["./wait-for-postgres.sh", "postgres:5432", "npm start"]
+    links:
+      - postgres
     restart: always
     volumes:
       - .:/src:rw
+
+  postgres:
+    image: postgres:9.4-alpine
+    environment:
+      - POSTGRES_USER=vitta
+      - POSTGRES_PASSWORD=UaHq3MksCSGeCXeN
+      - POSTGRES_DB=vitta-challenge
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./database_data:/var/lib/postgresql/data"
