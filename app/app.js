@@ -15,6 +15,6 @@ const server = http.createServer(app.callback());
 (async function() {
   await connect();
   server.listen(config.server.port, () => {
-    console.log(`Quero trabalhar na Vitta! btw, ${ config.app.name } rodando na ${ config.server.port }`);
+    console.log(`Quero *muito* trabalhar na Vitta! API ${ config.app.name } rodando em localhost:80`);
   });
 })();
