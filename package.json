@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "config": "*",
+    "knex": "^0.13.0",
     "koa": ">=2.2.x",
     "koa-body": ">=2.0.0",
-    "koa-router": ">=7.x.x"
+    "koa-router": ">=7.x.x",
+    "pg": "^7.0.2"
   },
   "devDependencies": {
     "get-port": "^3.0.0",
