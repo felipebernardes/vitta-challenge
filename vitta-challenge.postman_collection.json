@@ -8,6 +8,46 @@
 	},
 	"item": [
 		{
+			"name": "/squares/:x/:y",
+			"request": {
+				"url": "localhost:80/squares/0/36",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"A\",\n\t\"start\": { \"x\": 0, \"y\": 0 },\n\t\"end\": { \"x\": 50, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/squares/:x/:y/paint",
+			"request": {
+				"url": "localhost:80/squares/0/36/paint",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"A\",\n\t\"start\": { \"x\": 0, \"y\": 0 },\n\t\"end\": { \"x\": 50, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "/territories",
 			"request": {
 				"url": "localhost:80/territories",
