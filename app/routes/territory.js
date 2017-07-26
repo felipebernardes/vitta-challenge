@@ -12,6 +12,6 @@ router
     .post('/territories', KoaBody(), create);
 
 module.exports = {
-    routes() { return router.routes() },
-    allowedMethods() { return router.allowedMethods() }
+    territoryRoutes() { return router.routes() },
+    territoryMethods() { return router.allowedMethods() }
 };

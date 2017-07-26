@@ -1,6 +1,6 @@
 const KoaBody = require('koa-body');
 const Router = require('koa-router');
-const { get, paint } = require('../controllers/squares');
+const { get, paint } = require('../controllers/square');
 
 const router = new Router();
 
@@ -9,6 +9,6 @@ router
     .patch('/squares/:x/:y/paint', KoaBody(), paint);
 
 module.exports = {
-    routes() { return router.routes() },
-    allowedMethods() { return router.allowedMethods() }
+    squareRoutes() { return router.routes() },
+    squareMethods() { return router.allowedMethods() }
 };
